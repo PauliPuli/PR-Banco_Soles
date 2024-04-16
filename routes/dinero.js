@@ -1,15 +1,26 @@
 import express from "express";
-const router = express.Router();
-import { crearTransferencia } from "../controllers/transferencias.js";
+const cash = express.Router();
+import { transferir} from "../controllers/transferencias.js";
 
-router.post("/transferencia", async(req,res)=>{
-    const { nombre, balance } = req.body;
-    const datos=[ nombre, balance ];
-    console.log(datos);
-    console.log(req.body);
-    await agregarUsuario(datos);
-    res.send('Usuario agregado a la base de datos')
+cash.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
+
+cash.post("/transferencia", async(req,res)=>{
+    try{
+    const { emisor, receptor, monto, fecha} = req.body;
+    const datos=[ emisor, receptor, monto, fecha ];
+    console.log(datos);
+    console.log(req.body);
+    await transferir(datos);
+    res.send('Transacción realizada')
+    }catch(error){
+        res.status(500).send(error.message)
+    }
+});
+
+
+export default cash;
 
 
