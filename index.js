@@ -5,7 +5,6 @@ import router from "./routes/routes.js";
 
 //Midleware
 app.use(express.json());
-app.use(express.static("img"));
 app.use("/",router);
 
 app.listen(PORT, () =>

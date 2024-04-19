@@ -4,13 +4,12 @@
 <h3><li>Levantar servidor</li></h3>
 <p>El servidor lo levantamos en index.js mientras que routes.js contendrá todas las rutas CRUD del Banco Soles.<p>
 <p>También comprobamos la función getDate() para comprobar la conexión con nuestra base de datos con nuestras tablas: usuarios y transferencias</p>
-<img src='./img/01-tablas-dbeaver.png
-'>
+<img src='./img/01-tablas-dbeaver.png'>
 <h3><li>Consultas sql de tabla usuarios</li></h3>
 <p>En la carpeta de controllers tenemos 2 archivos: consultas.js para la tabla usuarios y transferencias.js para la tabla transferencias.</p>
 <p>En la carpeta 'queries' están las funciones que conectarán las consultas con 'routes.js'</p>
 <p>Comenzamos con las rutas GET/usuarios y POST/usuario para mostrar y agregar datos a la tabla de usuarios.</p>
-<img src='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/40b74f87-fadb-4bca-ad07-b1d1746d3eb6
+<img src='./img/02-inicio-BancoSolar.png
 '>
 <figcaption>Recomiendo agregar al menos 1 usuario desde la base de datos para verificar que está leyendo los datos desde el html.</figcaption>
 <p>A continuación, trabajamos con la ruta PUT/usuario (para trabajar con todos los datos a excepción del id) y DELETE/usuario(usamos el id para eliminar).</p>
