@@ -43,10 +43,10 @@ const verTransferencias = async () => {
   try {
     const sql = {
       text:`SELECT
+      t.fecha,
       e.nombre AS emisor,
       r.nombre AS receptor,
-      t.monto,
-      t.fecha
+      t.monto
       FROM
       transferencias t
       JOIN

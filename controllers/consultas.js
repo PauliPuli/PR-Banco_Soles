@@ -1,3 +1,4 @@
+import { text } from "express";
 import pool from "../config/db.js";
 
 //Consulta para ingresar datos
@@ -15,7 +16,7 @@ const agregarUsuario = async (datos) => {
 };
 
 //consulta de obtener datos
-const verUsuario=async()=>{
+const verUsuario = async () => {
   try {
     const query = {
       text: "select * from usuarios",
@@ -27,8 +28,7 @@ const verUsuario=async()=>{
   }
 };
 
-
-const editarUsuario= async (datos) => {
+const editarUsuario = async (datos) => {
   try {
     const query = {
       text: "update usuarios set nombre=$1, balance=$2 where id=$3 returning *",
@@ -41,21 +41,27 @@ const editarUsuario= async (datos) => {
   }
 };
 
-const borrarUsuario=async(id)=>{
-  try{
-    const query= {
-        text: 'delete from usuarios where id=$1',
-        values: [id]
-    }
-    const response= await pool.query(query);
+const borrarUsuario = async (id) => {
+  const deleteUser = {
+    text: "delete from usuarios where id=$1",
+    values: [id],
+  };
+  const deleteTransfer = {
+    text: "DELETE FROM transferencias WHERE emisor = $1 OR receptor = $1;",
+    values: [id],
+  };
+  try {
+    await pool.query("begin");
+    await pool.query(deleteTransfer);
+    const response=await pool.query(deleteUser);
+    await pool.query("commit");
     if (response.rowCount == 0) {
-        throw new Error("Usuario eliminado");
-      }
-    return response.rows
-}catch (error){
-    console.log(error.message)
-}
-}
+      throw new Error("Usuario eliminado");
+    }
+    return response.rows;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
-
-export { agregarUsuario, verUsuario, editarUsuario, borrarUsuario};
+export { agregarUsuario, verUsuario, editarUsuario, borrarUsuario };

@@ -40,7 +40,7 @@ const borrarCliente=async (req, res) => {
     try{
     const { id } = req.query;
     await borrarUsuario(id);
-    res.send("Eliminado");
+    res.send("El usuario ha sido eliminado de la base de datos");
     }
     catch(error){
         res.status(500).send('No hemos logrado concretar su petición, lo sentimos')
