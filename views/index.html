@@ -10,23 +10,63 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   </head>
-  <body class="p-2">
-    <h1 class="text-center mt-2" style="font-size: 60px">&#127979;</h1>
-    <h2 class="text-center pb-0 mb-0">Banco Solar C.A</h2>
-    <hr class="w-25 pb-1" />
-    <div class="row m-auto px-5">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navegador py-2 px-4 mb-5" id="mainNav">
+      <div class="container-fluid mx-4 px-4">
+        <a class="navbar-brand fs-1 marca h2" href="#">
+          <img
+            src="img/banco-solar-02.png"
+            alt="Logo"
+            height="50"
+            class="d-inline-block align-text-middle px-3"
+          />Banco Solar
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Créditos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tarjetas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Servicio al Cliente</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="row m-auto px-5">
       <div class="col-12 col-sm-5">
         <form>
           <div class="form-group text-center">
             <h5>Agregar Nuevo Usuario</h5>
-            <hr class="bg-white w-50" />
+            <hr class="bg-white w-50 mx-auto mb-4" />
             <div class="d-flex align-items-center justify-content-center">
               Nombre:
               <input class="form-control d-inline mx-3" required />
               Balance:
               <input class="form-control d-inline mx-3" required />
-              <button type="submit" class="btn btn-danger">Agregar</button>
+              <button type="submit" class="btn accion">Agregar</button>
             </div>
           </div>
         </form>
@@ -37,7 +77,7 @@
         <form>
           <div class="form-group text-center">
             <h5>Realizar una Transferencia</h5>
-            <hr class="bg-white w-50" />
+            <hr class="bg-white w-50 mx-auto mb-4" />
             <div
               class="d-flex align-items-center justify-content-center flex-wrap"
             >
@@ -59,7 +99,6 @@
 
               <div class="mr-3">
                 Monto:
-
                 <input
                   type="text"
                   class="form-control mx-2 w-auto d-inline"
@@ -67,7 +106,9 @@
                 />
               </div>
 
-              <button type="submit" class="btn btn-danger my-4">Realizar</button>
+              <button type="submit" class="btn accion my-4">
+                Realizar
+              </button>
             </div>
           </div>
         </form>
@@ -76,7 +117,7 @@
         <div class="col-12 col-sm-5 text-center">
           <h5 class="my-3">Tabla de usuarios</h5>
           <table class="table bg-light">
-            <thead class="bg-danger text-white">
+            <thead class="titulo-tabla text-white">
               <th>Nombre</th>
               <th>Balance</th>
               <th></th>
@@ -88,7 +129,7 @@
         <div class="col-12 col-sm-7 text-center">
           <h5 class="my-3">Tabla de Transferencias</h5>
           <table class="table bg-light">
-            <thead class="bg-danger text-white">
+            <thead class="titulo-tabla text-white">
               <th>Fecha</th>
               <th>Emisor</th>
               <th>Receptor</th>
@@ -124,7 +165,15 @@
           </table>
         </div>
       </div>
-    </div>
+    </main>
+    <footer class="bg-dark text-center mt-4 p-2">
+      <h3 class="text-white m-0 p-0 marca"><img
+        src="img/banco-solar-02.png"
+        alt="Logo"
+        height="80"
+        class="align-text-middle p-3">Banco Solar</h3>
+      <p class="text-white my-1"> © Todos los derechos reservados</p>
+    </footer>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -143,7 +192,7 @@
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <div
+    <!-- <div
       class="modal fade"
       id="exampleModal"
       tabindex="-1"
@@ -171,160 +220,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+    <script src="/js/script.js"></script>
   </body>
 </html>
-
-<style>
-  body {
-    background: #e5e1dd;
-  }
-  form {
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-  }
-</style>
-
-<script>
-  const setInfoModal = (nombre, balance, id) => {
-    $("#nombreEdit").val(nombre);
-    $("#balanceEdit").val(balance);
-    $("#editButton").attr("onclick", `editUsuario('${id}')`);
-  };
-
-  const editUsuario = async (id) => {
-    const name = $("#nombreEdit").val();
-    const balance = $("#balanceEdit").val();
-    try {
-      const { data } = await axios.put(
-        `/usuario?id=${id}`,
-        {
-          id,
-          nombre:name,
-          balance,
-        }
-      );
-      $("#exampleModal").modal("hide");
-      location.reload();
-    } catch (e) {
-      alert("Algo salió mal..." + e);
-    }
-  };
-
-  $("form:first").submit(async (e) => {
-    e.preventDefault();
-    let nombre = $("form:first input:first").val();
-    let balance = Number($("form:first input:nth-child(2)").val());
-    try {
-      const response = await fetch("/usuario", {
-        method: "post",
-        headers: {
-      "Content-Type": "application/json"
-    },
-        body: JSON.stringify({
-          nombre,
-          balance,
-        }),
-      });
-      $("form:first input:first").val("");
-      $("form:first input:nth-child(2)").val("");
-      location.reload();
-    } catch (e) {
-      alert("Algo salió mal ..." + e);
-    }
-  });
-
-  $("form:last").submit(async (e) => {
-    e.preventDefault();
-    let emisor = $("form:last select:first").val();
-    let receptor = $("form:last select:last").val();
-    let monto = $("#monto").val();
-    if (!monto || !emisor || !receptor) {
-      alert("Debe seleccionar un emisor, receptor y monto a transferir");
-      return false;
-    }
-    try {
-      const response = await fetch("http://localhost:3000/transferencia", {
-        method: "post",
-        headers: {
-      "Content-Type": "application/json"
-    },
-        body: JSON.stringify({
-          emisor,
-          receptor,
-          monto,
-        }),
-      });
-      const data = await response.json();
-      location.reload();
-    } catch (e) {
-      console.log(error);
-      alert("Algo salió mal..." + error);
-    }
-  });
-
-  const getUsuarios = async () => {
-    const response = await fetch("http://localhost:3000/usuarios");
-    let data = await response.json();
-    $(".usuarios").html("");
-
-    $.each(data, (i, c) => {
-      $(".usuarios").append(`
-              <tr>
-                <td>${c.nombre}</td>
-                <td>${c.balance}</td>
-                <td>
-                  <button
-                    class="btn btn-outline-danger mr-2"
-                    data-toggle="modal"
-                    data-target="#exampleModal"
-                    onclick="setInfoModal('${c.nombre}', '${c.balance}', '${c.id}')"
-                  >
-                    Editar</button
-                  ><button class="btn btn-danger" onclick="eliminarUsuario('${c.id}')">Eliminar</button>
-                </td>
-              </tr>
-         `);
-
-      $("#emisor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
-      $("#receptor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
-    });
-  };
-
-  const eliminarUsuario = async (id) => {
-    const response = await fetch(`/usuario?id=${id}`, {
-      method: "DELETE",
-            headers: {
-      "Content-Type": "application/json"
-    },
-    });
-    getUsuarios();
-  };
-
-  const getTransferencias = async () => {
-    const { data } = await axios.get("http://localhost:3000/transferencias");
-    $(".transferencias").html("");
-
-    data.forEach((t) => {
-      $(".transferencias").append(`
-       <tr>
-         <td> ${formatDate(t[4])} </td>
-         <td> ${t[1]} </td>
-         <td> ${t[2]} </td>
-         <td> ${t[3]} </td>
-       </tr>
-     `);
-    });
-  };
-
-  getUsuarios();
-  getTransferencias();
-
-  const formatDate = (date) => {
-    const dateFormat = moment(date).format("L");
-    const timeFormat = moment(date).format("LTS");
-    return `${dateFormat} ${timeFormat}`;
-  };
-  formatDate();
-</script>
