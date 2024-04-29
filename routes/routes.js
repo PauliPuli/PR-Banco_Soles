@@ -7,9 +7,9 @@ import {
   verCliente,
   editarCliente,
   borrarCliente,
-} from "../queries/usuarios.js";
+} from "../controllers/usuarios.controllers.js";
 
-import { crearTransaccion, verTransaciones } from "../queries/transbank.js";
+import { crearTransaccion, verTransaciones } from "../controllers/transbank.controllers.js";
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/index.html"));

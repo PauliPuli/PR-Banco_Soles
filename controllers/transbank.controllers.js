@@ -1,4 +1,4 @@
-import { transferir, verTransferencias} from "../controllers/transferencias.js";
+import { transferir, verTransferencias} from "../queries/transferencias.query.js";
 
 const crearTransaccion= async(req,res)=>{
     try {

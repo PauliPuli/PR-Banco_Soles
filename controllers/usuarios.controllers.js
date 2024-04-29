@@ -3,7 +3,7 @@ import {
   verUsuario,
   editarUsuario,
   borrarUsuario,
-} from "../controllers/consultas.js";
+} from "../queries/consultas.query.js";
 
 const agregarCliente = async (req, res) => {
   try {
