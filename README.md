@@ -4,7 +4,8 @@
 <h3><li>Levantar servidor</li></h3>
 <p>El servidor lo levantamos en index.js mientras que routes.js contendrá todas las rutas CRUD del Banco Soles.<p>
 <p>También comprobamos la función getDate() para comprobar la conexión con nuestra base de datos con nuestras tablas: usuarios y transferencias</p>
-<img src='/01-tablas-dbeaver.png
+<img src='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/5df31fe4-4276-4576-abad-8dbdb1eef336
+
 '>
 <h3><li>Consultas sql de tabla usuarios</li></h3>
 <p>En la carpeta de controllers tenemos 2 archivos: consultas.js para la tabla usuarios y transferencias.js para la tabla transferencias.</p>
