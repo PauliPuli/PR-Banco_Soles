@@ -15,14 +15,14 @@
 <h3><li>Consultas sql de tabla transferencias</li></h3>
 <p>Esta fue la parte que más problemas dio, ya que al trabajar con claves foráneas debíamos cambiar el balance cada que hacemos una transacción</p>
 <p>Por alguna razón no estaba colocando los datos del emisor en su respectiva columna y además tenía 2 fechas. Esto debido a que en el html ya estaba incluido.Sin embargo, al revisar en dBeaver los datos se agregaban en sus respectivas casillas.</p>
-<imgsrc='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/f162b058-226b-4294-8eea-38003a0bd637'>
+<img src='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/f162b058-226b-4294-8eea-38003a0bd637'>
 <p>Noté que en 'verTransferencia' (transferencias.js, línea 46) debía cambiar el orden de los elementos, dejando la fecha en primer lugar.</p>
 <p>Realicé una última inspección y noté que la función para eliminar usuarios no daba respuestas y arrojaba el siguiente error:<p>
 <img alt='error-delete' src='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/bb09870f-5a72-4eaf-9f10-a0ec9e8af061
 
 '>
 <p>Volví a dBeaver para alterar la tabla:</p>
-<imgsrc='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/100c5f21-78ef-468a-be3e-6c79ddadda95
+<img src='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/100c5f21-78ef-468a-be3e-6c79ddadda95
 '>
 <p>No fue suficiente pues había que cambiar la función para eliminar usuarios planteándola como una transacción.</p>
 <img src='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/74900389-9efa-4170-a33b-541bb3ff0cd1
