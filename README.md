@@ -1,4 +1,7 @@
 <h1>Prueba Módulo 7 - Banco Soles</h1>
+<img src='https://github.com/PauliPuli/PR-Banco_Soles/assets/156126623/2396bce4-122d-43c2-a06c-11cef0be1899'>
+<figcaption>Vista final</figcaption>
+<hr>
 <h2>Paso a paso</h2>
 <ol>
 <h3><li>Levantar servidor</li></h3>
