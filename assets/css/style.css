@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding:0
+}
+:root{
+    --orange:#FBB03B;
+    --azulrey:#1B1464;
+}
+
+body {
+    background: #e5e1dd;
+  }
+  form {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+  }
+.navegador{
+color: var(--orange);
+background-color: var(--azulrey);
+
+}
+  .nav-link:hover{
+    color: var(--orange);
+  }
+.marca{
+    font-family: "Libre Bodoni", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: auto;
+  }
+
+.accion{
+    background-color: #191081;
+    color: white;
+}  
+.accion:hover{
+    color: white;
+    background-color: var(--azulrey);
+}
+
+.titulo-tabla{
+    background-color: var(--orange);
+}
+
+.edit-btn{
+    color: var(--azulrey);
+    border: 1px  solid var(--orange);
+}
+.edit-btn:hover{
+    background-color: var(--orange);
+    color: white;
+    border: 0px  none
+}
+
+footer{
+    align-items: end;
+ 
+}
